@@ -9,7 +9,7 @@ A PHP library for validating and parsing Serbian unique master citizen numbers (
 
 - ✅ Validate JMBG numbers with comprehensive checks
 - ✅ Extract birth date, region, and gender information
-- ✅ Support for all ex-Yugoslav regions
+- ✅ Support for all Serbian regions
 - ✅ Calculate age from JMBG
 - ✅ Type-safe with PHP 8.1+ features
 - ✅ Fully tested with PHPUnit
@@ -114,7 +114,7 @@ JMBG consists of 13 digits: `DDMMYYYRRBBBC`
 
 ### Supported Regions
 
-The library supports all ex-Yugoslav regions including:
+The library supports all Serbian and some ex-Yugoslav regions including (beware: ex-Yugoslav regions may have changed since the breakup):
 
 - **Serbia** (71-79): Belgrade, Kragujevac, Niš, etc.
 - **Serbia/Vojvodina** (80-89): Novi Sad, Subotica, Pančevo, etc.
