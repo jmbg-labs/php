@@ -65,7 +65,9 @@ final class Jmbg implements JmbgInterface
 
     public function getDate(): DateTime
     {
-        return new DateTime(sprintf('%04d-%02d-%02d', $this->parts['year'], $this->parts['month'], $this->parts['day']));
+        return new DateTime(
+            sprintf('%04d-%02d-%02d', $this->parts['year'], $this->parts['month'], $this->parts['day'])
+        );
     }
 
     public function format(): string
@@ -121,8 +123,11 @@ final class Jmbg implements JmbgInterface
         // Region of birth validation
         $countryCode = substr(sprintf('%02d', $parts['region']), 0, 1);
         $regionCode = substr(sprintf('%02d', $parts['region']), 1, 1);
-        
-        if (!array_key_exists($countryCode, self::REGIONS) || !array_key_exists($regionCode, self::REGIONS[$countryCode])) {
+
+        if (
+            !array_key_exists($countryCode, self::REGIONS)
+            || !array_key_exists($regionCode, self::REGIONS[$countryCode])
+        ) {
             throw new JmbgException("Region '{$parts['region']}' is not valid for Serbian JMBG.");
         }
 
@@ -195,7 +200,7 @@ final class Jmbg implements JmbgInterface
     /**
      * Array of ex-YU countries
      */
-    private const COUNTRIES = array(
+    private const COUNTRIES = [
         '0' => 'foreign citizens',
         '1' => 'Bosnia and Herzegovina',
         '2' => 'Montenegro',
@@ -205,13 +210,13 @@ final class Jmbg implements JmbgInterface
         '7' => 'Serbia',
         '8' => 'Serbia/Vojvodina',
         '9' => 'Serbia/Kosovo',
-    );
+    ];
 
     /**
      * Array of ex-YU countries' regions
      */
-    private const REGIONS = array(
-        '0' => array(
+    private const REGIONS = [
+        '0' => [
             '0' => 'naturalized citizens which had no republican citizenship',
             '1' => 'foreigners in Bosnia and Herzegovina',
             '2' => 'foreigners in Montenegro',
@@ -222,9 +227,9 @@ final class Jmbg implements JmbgInterface
             '7' => 'foreigners in Serbia/Vojvodina',
             '8' => 'foreigners in Serbia/Kosovo',
             '9' => 'naturalized citizens which had no republican citizenship',
-        ),
+        ],
 
-        '1' => array(
+        '1' => [
             '0' => 'Banja Luka',
             '1' => 'Bihać',
             '2' => 'Doboj',
@@ -235,9 +240,9 @@ final class Jmbg implements JmbgInterface
             '7' => 'Sarajevo',
             '8' => 'Tuzla',
             '9' => 'Zenica',
-        ),
+        ],
 
-        '2' => array(
+        '2' => [
             '0' => '',
             '1' => 'Podgorica',
             '2' => 'Bar, Ulcinj',
@@ -248,9 +253,9 @@ final class Jmbg implements JmbgInterface
             '7' => 'Berane, Rožaje, Plav, Andrijevica',
             '8' => 'Bijelo Polje, Mojkovac',
             '9' => 'Pljevlja, Žabljak',
-        ),
+        ],
 
-        '3' => array(
+        '3' => [
             '0' => 'Osijek, Slavonija',
             '1' => 'Bjelovar, Virovitica, Koprivnica, Pakrac, Podravina',
             '2' => 'Varaždin, Međimurje',
@@ -261,9 +266,9 @@ final class Jmbg implements JmbgInterface
             '7' => 'Sisak, Banovina',
             '8' => 'Split, Zadar, Šibenik, Dubrovnik, Dalmacija',
             '9' => 'Hrvatsko Zagorje',
-        ),
+        ],
 
-        '4' => array(
+        '4' => [
             '0' => '',
             '1' => 'Bitola',
             '2' => 'Kumanovo',
@@ -274,13 +279,13 @@ final class Jmbg implements JmbgInterface
             '7' => 'Tetovo',
             '8' => 'Veles',
             '9' => 'Štip',
-        ),
+        ],
 
-        '5' => array(
+        '5' => [
             '0' => '',
-        ),
+        ],
 
-        '7' => array(
+        '7' => [
             '0' => '',
             '1' => 'Belgrade',
             '2' => 'Kragujevac',
@@ -291,9 +296,9 @@ final class Jmbg implements JmbgInterface
             '7' => 'Mačva, Kolubara',
             '8' => 'Čačak, Kraljevo, Kruševac',
             '9' => 'Užice',
-        ),
+        ],
 
-        '8' => array(
+        '8' => [
             '0' => 'Novi Sad',
             '1' => 'Sombor',
             '2' => 'Subotica',
@@ -304,9 +309,9 @@ final class Jmbg implements JmbgInterface
             '7' => 'Vršac',
             '8' => 'Ruma',
             '9' => 'Sremska Mitrovica',
-        ),
+        ],
 
-        '9' => array(
+        '9' => [
             '0' => '',
             '1' => 'Priština',
             '2' => 'Kosovska Mitrovica',
@@ -317,6 +322,6 @@ final class Jmbg implements JmbgInterface
             '7' => '',
             '8' => '',
             '9' => '',
-        ),
-    );
+        ],
+    ];
 }

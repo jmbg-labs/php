@@ -23,7 +23,8 @@
         "php": "^8.1"
     },
     "require-dev": {
-        "phpunit/phpunit": "^11.0|^12.0|^13.0"
+        "phpunit/phpunit": "^11.0|^12.0|^13.0",
+        "squizlabs/php_codesniffer": "^4.0"
     },
     "autoload": {
         "psr-4": {
@@ -37,7 +38,9 @@
     },
     "scripts": {
         "test": "vendor/bin/phpunit",
-        "test-coverage": "vendor/bin/phpunit --coverage-html coverage"
+        "test-coverage": "vendor/bin/phpunit --coverage-html coverage",
+        "cs": "vendor/bin/phpcs",
+        "cs-fix": "vendor/bin/phpcbf"
     },
     "support": {
         "issues": "https://github.com/jmbg-labs/php/issues",
