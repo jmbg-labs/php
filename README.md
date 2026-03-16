@@ -114,7 +114,7 @@ JMBG consists of 13 digits: `DDMMYYYRRBBBC`
 
 ### Supported Regions
 
-The library supports all Serbian and some ex-Yugoslav regions including (beware: ex-Yugoslav regions may have changed since the breakup):
+The library supports all Serbian and ex-Yugoslav regions including (beware: ex-Yugoslav regions codes may have changed since the breakup):
 
 - **Serbia** (71-79): Belgrade, Kragujevac, Niš, etc.
 - **Serbia/Vojvodina** (80-89): Novi Sad, Subotica, Pančevo, etc.
