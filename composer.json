@@ -9,6 +9,13 @@
             "JmbgLabs\\Jmbg\\": "src/"
         }
     },
+    "autoload-dev": {
+        "psr-4": {
+            "JmbgLabs\\Jmbg\\Tests\\": "tests/"
+        }
+    },
     "minimum-stability": "stable",
-    "require": {}
+    "require-dev": {
+        "phpunit/phpunit": "^13.0"
+    }
 }
