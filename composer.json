@@ -1,0 +1,14 @@
+{
+    "name": "jmbg-labs/jmbg",
+    "description": "Validate Serbian unique master citizen number",
+    "type": "library",
+    "license": "MIT",
+    "version": "1.0.0",
+    "autoload": {
+        "psr-4": {
+            "JmbgLabs\\Jmbg\\": "src/"
+        }
+    },
+    "minimum-stability": "stable",
+    "require": {}
+}
